@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShadowHub v4.2 — Mirror #7</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0a0a0a;
+      color: #00ff41;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 16px;
+      line-height: 1.4;
+      padding: 20px;
+      image-rendering: pixelated;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    h1 {
+      font-family: 'VT323', monospace;
+      font-size: 4.5rem;
+      color: #00ff41;
+      text-shadow: 
+        0 0 10px #00ff41,
+        0 0 30px #00aa30,
+        0 0 60px #006600;
+      letter-spacing: 6px;
+      animation: glitch 4s infinite;
+    }
+
+    .status {
+      color: #00cc00;
+      margin: 10px 0;
+      font-size: 1.3rem;
+    }
+
+    .warning {
+      color: #ff0044;
+      font-weight: bold;
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .mirror-info {
+      color: #888;
+      font-size: 0.9rem;
+      margin-bottom: 30px;
+    }
+
+    table {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto 40px;
+      border-collapse: collapse;
+      background: #111;
+      border: 1px solid #00aa30;
+    }
+
+    th, td {
+      padding: 14px;
+      border: 1px solid #003300;
+      text-align: left;
+    }
+
+    th {
+      background: #002200;
+      color: #00ff80;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+
+    tr:hover {
+      background: #1a1a1a;
+    }
+
+    .price {
+      color: #00ffaa;
+      font-weight: bold;
+    }
+
+    .vendor {
+      color: #aaa;
+    }
+
+    .online {
+      color: #00ff41;
+    }
+
+    .offline {
+      color: #555;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #002200;
+      color: #00ff41;
+      border: 2px solid #00aa30;
+      padding: 10px 20px;
+      margin: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.15s;
+    }
+
+    .btn:hover {
+      background: #003300;
+      box-shadow: 0 0 15px #00ff41;
+    }
+
+    footer {
+      text-align: center;
+      color: #444;
+      margin-top: 60px;
+      font-size: 0.85rem;
+    }
+
+    .ascii {
+      font-family: 'VT323', monospace;
+      font-size: 1.1rem;
+      white-space: pre;
+      color: #006600;
+      margin: 20px auto;
+      text-align: center;
+      max-width: 90%;
+    }
+
+    @keyframes glitch {
+      0%   { text-shadow: 2px  2px #ff0044, -2px -2px #00ff41; }
+      20%  { text-shadow: -2px  2px #00ffff,  2px -2px #ff00aa; }
+      40%  { text-shadow: 2px -2px #ffff00, -2px  2px #00ff00; }
+      60%  { text-shadow: -4px  0  #ff0044,  4px  0 #00ffff; }
+      80%  { text-shadow: 0   -4px #00ff41, 0    4px #ff00aa; }
+      100% { text-shadow: 2px  2px #ff0044, -2px -2px #00ff41; }
+    }
+
+    .blink {
+      animation: blink 1.2s step-end infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>SHADOWHUB</h1>
+  <div class="status">Version 4.2 • Mirror #7 • <span class="blink">ONLINE</span></div>
+  <div class="mirror-info">
+    Last mirror update: 03 Feb 2026 14:21 UTC • PGP: E4F9•A2B1•C7D3•...
+  </div>
+</header>
+
+<div class="warning">
+  [!] JavaScript вимкнено = безпека. Не вмикай JS. Не завантажуй файли без перевірки. Використовуй Tails або Whonix.
+</div>
+
+<div class="ascii">
+   ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄ 
+  ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌
+  ▐░█▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀█░█▀▀▀▀  ▀▀▀▀▀█░█▀▀▀▀  ▀▀▀▀▀█░█▀▀▀▀  ▀▀▀▀▀█░█▀▀▀▀ 
+  ▐░▌               ▐░▌          ▐░▌          ▐░▌          ▐░▌     
+  ▐░█▄▄▄▄▄▄▄▄▄      ▐░▌          ▐░▌          ▐░▌          ▐░▌     
+  ▐░░░░░░░░░░░▌     ▐░▌          ▐░▌          ▐░▌          ▐░▌     
+  ▀▀▀▀▀▀▀▀▀▀▀       ▀           ▀           ▀           ▀      
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Товар</th>
+      <th>Категорія</th>
+      <th>Вендор</th>
+      <th>Ціна</th>
+      <th>Рейтинг</th>
+      <th>Дія</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Premium Residential Proxies • 100 IPs</td>
+      <td>Проксі / Соки</td>
+      <td class="vendor">GhostProxy</td>
+      <td class="price">0.085 BTC</td>
+      <td>4.92 (1289)</td>
+      <td><a href="#" class="btn">Купити</a></td>
+    </tr>
+    <tr>
+      <td>Cocaine • 1g • EU Shipping</td>
+      <td>Стимулятори</td>
+      <td class="vendor">SnowKing</td>
+      <td class="price">€78</td>
+      <td>4.87 (3421)</td>
+      <td><a href="#" class="btn">Купити</a></td>
+    </tr>
+    <tr>
+      <td>Fullz • USA • CC+CVV+Name+Addr • Fresh</td>
+      <td>Кардинг</td>
+      <td class="vendor">DumpLord</td>
+      <td class="price">12–18$ / 1 шт</td>
+      <td>4.65 (987)</td>
+      <td><a href="#" class="btn">Купити</a></td>
+    </tr>
+    <tr>
+      <td>Bitcoin Mixer • 3–10 confirmations</td>
+      <td>Міксери</td>
+      <td class="vendor">CryptoWasher</td>
+      <td class="price">1.8% + 0.0005 BTC</td>
+      <td>4.95 (5642)</td>
+      <td><a href="#" class="btn">Змішати</a></td>
+    </tr>
+    <tr>
+      <td>Fentanyl powder • 500mg</td>
+      <td>Опіоїди</td>
+      <td class="vendor offline">DarkChemist (оффлайн)</td>
+      <td class="price">---</td>
+      <td>4.71 (421)</td>
+      <td><a href="#" class="btn">---</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="text-align:center; margin:60px 0;">
+  <a href="#" class="btn" style="font-size:1.4rem; padding:18px 40px;">Вхід / Реєстрація</a>
+  <a href="#" class="btn" style="font-size:1.4rem; padding:18px 40px;">Правила маркету</a>
+  <a href="#" class="btn" style="font-size:1.4rem; padding:18px 40px;">PGP ключі вендорів</a>
+</div>
+
+<footer>
+  Use Tor Browser • Never use clearnet • No JavaScript • No 2FA with phone • PGP everywhere<br>
+  ShadowHub — 2025–2026 • No exit scam guarantee • Mirror status: ███████ 100%
+</footer>
+
+</body>
+</html>
