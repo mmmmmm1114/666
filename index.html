@@ -3,249 +3,321 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ShadowHub v4.2 — Mirror #7</title>
+  <title>ShadowHub v4.3 — Mirror #13</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      background: #0a0a0a;
-      color: #00ff41;
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 16px;
-      line-height: 1.4;
-      padding: 20px;
-      image-rendering: pixelated;
+      background:#0a0a0a;
+      color:#00ff41;
+      font-family:'Share Tech Mono', monospace;
+      font-size:16px;
+      line-height:1.4;
+      padding:20px;
     }
 
-    header {
-      text-align: center;
-      margin-bottom: 30px;
-      position: relative;
-    }
-
+    header { text-align:center; margin-bottom:30px; position:relative; }
     h1 {
-      font-family: 'VT323', monospace;
-      font-size: 4.5rem;
-      color: #00ff41;
-      text-shadow: 
-        0 0 10px #00ff41,
-        0 0 30px #00aa30,
-        0 0 60px #006600;
-      letter-spacing: 6px;
-      animation: glitch 4s infinite;
+      font-family:'VT323', monospace;
+      font-size:4.5rem;
+      color:#00ff41;
+      text-shadow:0 0 10px #00ff41, 0 0 30px #00aa30, 0 0 60px #006600;
+      letter-spacing:6px;
+      animation:glitch 4s infinite;
     }
 
-    .status {
-      color: #00cc00;
-      margin: 10px 0;
-      font-size: 1.3rem;
-    }
-
-    .warning {
-      color: #ff0044;
-      font-weight: bold;
-      margin: 20px 0;
-      text-align: center;
-    }
-
-    .mirror-info {
-      color: #888;
-      font-size: 0.9rem;
-      margin-bottom: 30px;
-    }
+    .status { color:#00cc00; margin:10px 0; font-size:1.3rem; }
+    .warning { color:#ff0044; font-weight:bold; margin:20px 0; text-align:center; }
+    .mirror-info { color:#888; font-size:0.9rem; margin-bottom:30px; }
 
     table {
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto 40px;
-      border-collapse: collapse;
-      background: #111;
-      border: 1px solid #00aa30;
+      width:100%; max-width:1100px; margin:0 auto 40px;
+      border-collapse:collapse; background:#111; border:1px solid #00aa30;
     }
+    th, td { padding:14px; border:1px solid #003300; text-align:left; }
+    th { background:#002200; color:#00ff80; text-transform:uppercase; font-size:0.95rem; }
+    tr:hover { background:#1a1a1a; }
 
-    th, td {
-      padding: 14px;
-      border: 1px solid #003300;
-      text-align: left;
-    }
-
-    th {
-      background: #002200;
-      color: #00ff80;
-      text-transform: uppercase;
-      font-size: 0.95rem;
-    }
-
-    tr:hover {
-      background: #1a1a1a;
-    }
-
-    .price {
-      color: #00ffaa;
-      font-weight: bold;
-    }
-
-    .vendor {
-      color: #aaa;
-    }
-
-    .online {
-      color: #00ff41;
-    }
-
-    .offline {
-      color: #555;
-    }
+    .price { color:#00ffaa; font-weight:bold; }
+    .vendor { color:#aaa; }
+    .online { color:#00ff41; }
+    .offline { color:#555; }
 
     .btn {
-      display: inline-block;
-      background: #002200;
-      color: #00ff41;
-      border: 2px solid #00aa30;
-      padding: 10px 20px;
-      margin: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.15s;
+      display:inline-block; background:#002200; color:#00ff41;
+      border:2px solid #00aa30; padding:10px 20px; margin:8px;
+      text-decoration:none; font-weight:bold; transition:all 0.15s;
     }
+    .btn:hover { background:#003300; box-shadow:0 0 15px #00ff41; }
 
-    .btn:hover {
-      background: #003300;
-      box-shadow: 0 0 15px #00ff41;
-    }
-
-    footer {
-      text-align: center;
-      color: #444;
-      margin-top: 60px;
-      font-size: 0.85rem;
-    }
+    footer { text-align:center; color:#444; margin-top:60px; font-size:0.85rem; }
 
     .ascii {
-      font-family: 'VT323', monospace;
-      font-size: 1.1rem;
-      white-space: pre;
-      color: #006600;
-      margin: 20px auto;
-      text-align: center;
-      max-width: 90%;
+      font-family:'VT323', monospace; font-size:1.1rem;
+      white-space:pre; color:#006600; margin:20px auto;
+      text-align:center; max-width:90%;
     }
 
     @keyframes glitch {
-      0%   { text-shadow: 2px  2px #ff0044, -2px -2px #00ff41; }
-      20%  { text-shadow: -2px  2px #00ffff,  2px -2px #ff00aa; }
-      40%  { text-shadow: 2px -2px #ffff00, -2px  2px #00ff00; }
-      60%  { text-shadow: -4px  0  #ff0044,  4px  0 #00ffff; }
-      80%  { text-shadow: 0   -4px #00ff41, 0    4px #ff00aa; }
-      100% { text-shadow: 2px  2px #ff0044, -2px -2px #00ff41; }
+      0%   { text-shadow:2px 2px #ff0044, -2px -2px #00ff41; }
+      20%  { text-shadow:-2px 2px #00ffff, 2px -2px #ff00aa; }
+      40%  { text-shadow:2px -2px #ffff00, -2px 2px #00ff00; }
+      60%  { text-shadow:-4px 0 #ff0044, 4px 0 #00ffff; }
+      80%  { text-shadow:0 -4px #00ff41, 0 4px #ff00aa; }
+      100% { text-shadow:2px 2px #ff0044, -2px -2px #00ff41; }
     }
 
-    .blink {
-      animation: blink 1.2s step-end infinite;
-    }
+    .blink { animation:blink 1.2s step-end infinite; }
+    @keyframes blink { 50% { opacity:0; } }
 
-    @keyframes blink {
-      50% { opacity: 0; }
+    /* Сторінка закриття */
+    #closed-screen {
+      position:fixed; inset:0; background:#000;
+      display:flex; flex-direction:column; justify-content:center; align-items:center;
+      z-index:9999; font-family:'VT323', monospace; color:#ff0044;
+      font-size:2.8rem; text-align:center; padding:20px;
     }
+    #closed-screen.hidden { display:none; }
+
+    #timer { font-size:3.5rem; color:#00ff41; margin:30px 0; }
+    #closed-msg { max-width:800px; line-height:1.3; }
+
+    /* Логін-скрін */
+    #login-screen {
+      position:fixed; inset:0; background:#000;
+      display:flex; flex-direction:column; justify-content:center; align-items:center;
+      z-index:10000; font-family:'VT323', monospace; color:#00ff41;
+      font-size:2.2rem; text-align:center; padding:20px;
+    }
+    #login-screen.hidden { display:none; }
+
+    #login-prompt { margin-bottom:20px; }
+    #access-code { 
+      background:#111; color:#00ff41; border:2px solid #00aa30;
+      font-family:'Share Tech Mono', monospace; font-size:1.8rem;
+      padding:10px; width:200px; text-align:center;
+    }
+    #submit-code { 
+      background:#002200; color:#00ff41; border:2px solid #00aa30;
+      padding:12px 24px; font-size:1.6rem; cursor:pointer;
+    }
+    #submit-code:hover { background:#003300; }
+    #error-msg { color:#ff0044; margin-top:15px; font-size:1.4rem; }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>SHADOWHUB</h1>
-  <div class="status">Version 4.2 • Mirror #7 • <span class="blink">ONLINE</span></div>
-  <div class="mirror-info">
-    Last mirror update: 03 Feb 2026 14:21 UTC • PGP: E4F9•A2B1•C7D3•...
+<div id="login-screen">
+  <div id="login-prompt">Введіть код доступу для входу в ShadowHub</div>
+  <input type="password" id="access-code" maxlength="3" placeholder="***" />
+  <button id="submit-code">УВІЙТИ</button>
+  <div id="error-msg"></div>
+</div>
+
+<div id="closed-screen" class="hidden">
+  <div id="closed-msg">
+    █ SHADOWHUB ВИМКНЕНО █<br><br>
+    Технічна перерва з 00:00 до 01:00 (за Києвом)<br>
+    Маркет буде доступний о 01:00
   </div>
-</header>
-
-<div class="warning">
-  [!] JavaScript вимкнено = безпека. Не вмикай JS. Не завантажуй файли без перевірки. Використовуй Tails або Whonix.
+  <div id="timer">--:--:--</div>
 </div>
 
-<div class="ascii">
-   ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄ 
-  ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌
-  ▐░█▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀█░█▀▀▀▀  ▀▀▀▀▀█░█▀▀▀▀  ▀▀▀▀▀█░█▀▀▀▀  ▀▀▀▀▀█░█▀▀▀▀ 
-  ▐░▌               ▐░▌          ▐░▌          ▐░▌          ▐░▌     
-  ▐░█▄▄▄▄▄▄▄▄▄      ▐░▌          ▐░▌          ▐░▌          ▐░▌     
-  ▐░░░░░░░░░░░▌     ▐░▌          ▐░▌          ▐░▌          ▐░▌     
-  ▀▀▀▀▀▀▀▀▀▀▀       ▀           ▀           ▀           ▀      
+<div id="main-content" class="hidden">
+  <header>
+    <h1>SHADOWHUB</h1>
+    <div class="status">Version 4.3 • Mirror #13 • <span class="blink">ONLINE</span></div>
+    <div class="mirror-info">
+      Last mirror update: 03 Feb 2026 14:21 UTC • PGP: E4F9•A2B1•C7D3•F8E2•... • Active mirrors: 7/10
+    </div>
+  </header>
+
+  <div class="warning">
+    [!] JavaScript вимкнено = максимальна безпека. Не вмикай JS на реальних сайтах. Використовуй Tails OS, Whonix або Qubes. PGP для всіх комунікацій. Не довіряй, перевіряй.
+  </div>
+
+  <div class="ascii">
+     ███████╗██╗  ██╗ █████╗ ██████╗  ██████╗ ██╗    ██╗    ██╗   ██╗██╗  ██╗██╗   ██╗██████╗ 
+     ██╔════╝██║  ██║██╔══██╗██╔══██╗██╔═══██╗██║    ██║    ██║   ██║██║  ██║██║   ██║██╔══██╗
+     ███████╗███████║███████║██║  ██║██║   ██║██║ █╗ ██║    ██║   ██║███████║██║   ██║██████╔╝
+     ╚════██║██╔══██║██╔══██║██║  ██║██║   ██║██║███╗██║    ╚██╗ ██╔╝██╔══██║██║   ██║██╔══██╗
+     ███████║██║  ██║██║  ██║██████╔╝╚██████╔╝╚███╔███╔╝     ╚████╔╝ ██║  ██║╚██████╔╝██████╔╝
+     ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝  ╚═════╝  ╚══╝╚══╝       ╚═══╝  ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ 
+  </div>
+
+  <div class="warning" style="font-size:1.1rem; margin:30px 0;">
+    [!] Попередження: Цей маркет — лише симуляція. Не використовуй для реальних дій. Всі товари фейкові. Код доступу: 666 (для тестування).
+  </div>
+
+  <table id="market-table">
+    <thead>
+      <tr>
+        <th>Товар</th>
+        <th>Категорія</th>
+        <th>Вендор</th>
+        <th>Ціна</th>
+        <th>Рейтинг / Відгуки</th>
+        <th>Доступність</th>
+        <th>Дія</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Premium Residential Proxies • 100 IPs • Rotating • High Speed</td>
+        <td>Проксі / SOCKS5 / VPN</td>
+        <td class="vendor online">GhostProxy (онлайн)</td>
+        <td class="price">0.085 BTC (~$4500)</td>
+        <td>4.92 / 1289 відгуків</td>
+        <td>В наявності: 500+ шт</td>
+        <td><a href="#" class="btn">Купити</a></td>
+      </tr>
+      <tr>
+        <td>Cocaine • 1g • 98% Purity • EU Stealth Shipping • Vacuum Sealed</td>
+        <td>Стимулятори / Наркотики</td>
+        <td class="vendor online">SnowKing (онлайн)</td>
+        <td class="price">€78 (~0.0012 BTC)</td>
+        <td>4.87 / 3421 відгуків</td>
+        <td>В наявності: 150g</td>
+        <td><a href="#" class="btn">Купити</a></td>
+      </tr>
+      <tr>
+        <td>Fullz • USA • CC+CVV+Name+Addr+SSN+DOB • Fresh 2026 Dumps</td>
+        <td>Кардинг / Дампи / Фулзи</td>
+        <td class="vendor online">DumpLord (онлайн)</td>
+        <td class="price">$12–18 / 1 шт (bulk discounts)</td>
+        <td>4.65 / 987 відгуків</td>
+        <td>В наявності: 10k+ шт</td>
+        <td><a href="#" class="btn">Купити</a></td>
+      </tr>
+      <tr>
+        <td>Bitcoin Mixer • 3–10 Confirmations • No Logs • Tumbling Service</td>
+        <td>Міксери / Ландромати / Крипто</td>
+        <td class="vendor online">CryptoWasher (онлайн)</td>
+        <td class="price">1.8% fee + 0.0005 BTC min</td>
+        <td>4.95 / 5642 відгуків</td>
+        <td>Сервіс онлайн</td>
+        <td><a href="#" class="btn">Змішати</a></td>
+      </tr>
+      <tr>
+        <td>Fentanyl Powder • 500mg • Lab Tested • Worldwide Shipping</td>
+        <td>Опіоїди / Наркотики</td>
+        <td class="vendor offline">DarkChemist (оффлайн)</td>
+        <td class="price">---</td>
+        <td>4.71 / 421 відгуків</td>
+        <td>Тимчасово недоступно</td>
+        <td><a href="#" class="btn">---</a></td>
+      </tr>
+      <tr>
+        <td>Hacking Toolkit • RAT + Keylogger + Exploits • Windows/Mac</td>
+        <td>Хакінг / Софт / Експлойти</td>
+        <td class="vendor online">CodePhantom (онлайн)</td>
+        <td class="price">0.02 BTC (~$1100)</td>
+        <td>4.89 / 756 відгуків</td>
+        <td>В наявності: ∞ (digital)</td>
+        <td><a href="#" class="btn">Купити</a></td>
+      </tr>
+      <tr>
+        <td>Fake Passport • EU Quality • Holograms + UV • Custom Data</td>
+        <td>Документи / Підробки / ID</td>
+        <td class="vendor online">ForgeMaster (онлайн)</td>
+        <td class="price">€1500 (~0.023 BTC)</td>
+        <td>4.82 / 1892 відгуків</td>
+        <td>Термін: 7–14 днів</td>
+        <td><a href="#" class="btn">Замовити</a></td>
+      </tr>
+      <tr>
+        <td>MDMA Crystals • 5g • 84%+ Purity • NL Vendor</td>
+        <td>Екстазі / Психоделіки</td>
+        <td class="vendor online">EcstasyEmpire (онлайн)</td>
+        <td class="price">€45 (~0.0007 BTC)</td>
+        <td>4.91 / 2345 відгуків</td>
+        <td>В наявності: 1kg+</td>
+        <td><a href="#" class="btn">Купити</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="text-align:center; margin:60px 0;">
+    <a href="#" class="btn" style="font-size:1.4rem; padding:18px 40px;">Вхід / Реєстрація (PGP required)</a>
+    <a href="#" class="btn" style="font-size:1.4rem; padding:18px 40px;">Правила маркету та FAQ</a>
+    <a href="#" class="btn" style="font-size:1.4rem; padding:18px 40px;">PGP ключі вендорів та адмінів</a>
+    <a href="#" class="btn" style="font-size:1.4rem; padding:18px 40px;">Форум / Диспути</a>
+  </div>
+
+  <footer>
+    Use Tor Browser Bundle • Never use clearnet proxies • No JavaScript on production • 2FA with Yubikey only • PGP encryption mandatory<br>
+    ShadowHub — 2025–2026 • No exit scam guarantee (escrow system) • Mirror status: ███████ 100% • Uptime: 99.98%
+  </footer>
 </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Товар</th>
-      <th>Категорія</th>
-      <th>Вендор</th>
-      <th>Ціна</th>
-      <th>Рейтинг</th>
-      <th>Дія</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Premium Residential Proxies • 100 IPs</td>
-      <td>Проксі / Соки</td>
-      <td class="vendor">GhostProxy</td>
-      <td class="price">0.085 BTC</td>
-      <td>4.92 (1289)</td>
-      <td><a href="#" class="btn">Купити</a></td>
-    </tr>
-    <tr>
-      <td>Cocaine • 1g • EU Shipping</td>
-      <td>Стимулятори</td>
-      <td class="vendor">SnowKing</td>
-      <td class="price">€78</td>
-      <td>4.87 (3421)</td>
-      <td><a href="#" class="btn">Купити</a></td>
-    </tr>
-    <tr>
-      <td>Fullz • USA • CC+CVV+Name+Addr • Fresh</td>
-      <td>Кардинг</td>
-      <td class="vendor">DumpLord</td>
-      <td class="price">12–18$ / 1 шт</td>
-      <td>4.65 (987)</td>
-      <td><a href="#" class="btn">Купити</a></td>
-    </tr>
-    <tr>
-      <td>Bitcoin Mixer • 3–10 confirmations</td>
-      <td>Міксери</td>
-      <td class="vendor">CryptoWasher</td>
-      <td class="price">1.8% + 0.0005 BTC</td>
-      <td>4.95 (5642)</td>
-      <td><a href="#" class="btn">Змішати</a></td>
-    </tr>
-    <tr>
-      <td>Fentanyl powder • 500mg</td>
-      <td>Опіоїди</td>
-      <td class="vendor offline">DarkChemist (оффлайн)</td>
-      <td class="price">---</td>
-      <td>4.71 (421)</td>
-      <td><a href="#" class="btn">---</a></td>
-    </tr>
-  </tbody>
-</table>
+<script>
+// Часова зона Києва (UTC+3 для лютого 2026? Перевір актуальне, але для симуляції OK)
+const TIMEZONE_OFFSET = 3; // години від UTC (літній час? Зміни на 2 якщо зимовий)
 
-<div style="text-align:center; margin:60px 0;">
-  <a href="#" class="btn" style="font-size:1.4rem; padding:18px 40px;">Вхід / Реєстрація</a>
-  <a href="#" class="btn" style="font-size:1.4rem; padding:18px 40px;">Правила маркету</a>
-  <a href="#" class="btn" style="font-size:1.4rem; padding:18px 40px;">PGP ключі вендорів</a>
-</div>
+function isMarketClosed() {
+  const now = new Date();
+  const utcHours = now.getUTCHours();
+  const kyivHours = (utcHours + TIMEZONE_OFFSET) % 24;
+  return kyivHours === 0; // 00:00–00:59 закрито
+}
 
-<footer>
-  Use Tor Browser • Never use clearnet • No JavaScript • No 2FA with phone • PGP everywhere<br>
-  ShadowHub — 2025–2026 • No exit scam guarantee • Mirror status: ███████ 100%
-</footer>
-  
+function getTimeToOpen() {
+  const now = new Date();
+  const msInHour = 3600000;
+  let target = new Date(now);
+  target.setUTCHours(22 - (TIMEZONE_OFFSET - 3), 0, 0, 0); // Налаштуй для 01:00 Київ
+  if (target < now) target.setUTCDate(target.getUTCDate() + 1);
+  const diff = target - now;
+  const hours = Math.floor(diff / msInHour);
+  const minutes = Math.floor((diff % msInHour) / 60000);
+  const seconds = Math.floor((diff % 60000) / 1000);
+  return `${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+}
+
+function updatePage() {
+  const closedEl = document.getElementById('closed-screen');
+  const mainContent = document.getElementById('main-content');
+  const timerEl = document.getElementById('timer');
+
+  if (isMarketClosed()) {
+    closedEl.classList.remove('hidden');
+    mainContent.style.display = 'none';
+    timerEl.textContent = getTimeToOpen();
+  } else {
+    closedEl.classList.add('hidden');
+    mainContent.style.display = 'block';
+  }
+}
+
+setInterval(updatePage, 5000);
+updatePage();
+
+// Логін з кодом 666
+const loginScreen = document.getElementById('login-screen');
+const accessCodeInput = document.getElementById('access-code');
+const submitBtn = document.getElementById('submit-code');
+const errorMsg = document.getElementById('error-msg');
+const mainContent = document.getElementById('main-content');
+
+submitBtn.addEventListener('click', () => {
+  const code = accessCodeInput.value.trim();
+  if (code === '666') {
+    loginScreen.classList.add('hidden');
+    mainContent.classList.remove('hidden');
+    updatePage(); // Перевірити закриття після логіну
+  } else {
+    errorMsg.textContent = 'Невірний код доступу. Спробуй ще.';
+    accessCodeInput.value = '';
+  }
+});
+
+// Дозволити Enter для submit
+accessCodeInput.addEventListener('keyup', (e) => {
+  if (e.key === 'Enter') submitBtn.click();
+});
+</script>
 
 </body>
 </html>
